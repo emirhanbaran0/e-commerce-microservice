@@ -59,9 +59,9 @@ public class UserController {
             @ApiResponse( responseCode = "200", description = "HTTP Status OK"),
             @ApiResponse(responseCode = "500", description = "INTERNAL SERVER ERROR")
     })
-    @GetMapping("/build-info")
+    @GetMapping("/build-version")
     public GenericResponse getBuildInfo(){
-        return new GenericResponse(200,"User MS build info",buildVersion);
+        return new GenericResponse(200,"User MS build version",buildVersion);
     }
 
 
