@@ -12,5 +12,15 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
       ddl-auto: update
+  config:
+    import: optional:configserver:http://localhost:8090
+  profiles:
+    active: prod
 server:
   port: 8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh
