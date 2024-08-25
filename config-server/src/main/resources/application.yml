@@ -1,0 +1,19 @@
+server:
+  port: 8090
+
+spring:
+  application:
+    name: config-server
+  profiles:
+    active: git
+  cloud:
+    config:
+      server:
+        git:
+          uri: "https://github.com/emirhanbaran0/e-commerce-config-server"
+          default-label: main #default branch
+          timeout: 5 #should wait until 5 seconds
+          clone-on-start: true
+          force-pull: true #reading always the latest config from main branch
+
+
